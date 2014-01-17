@@ -7,6 +7,8 @@ What does it do?
 
 When your user types in "user@gm", the plugin will suggest for e.g. "user@gmail.com", based on the first result from a list of predefined email domains.
 
+![diagram](https://raw.github.com/yzlow/email-autocomplete/master/doc_assets/example.png)
+
 Installation
 ------------
 
