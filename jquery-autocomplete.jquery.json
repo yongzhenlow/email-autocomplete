@@ -1,27 +1,27 @@
 {
-	"name": "email-autocomplete",
-	"title": "jQuery Email Autocomplete",
-	"description": "A jQuery plugin that suggests and autocompletes the domain in email fields.",
-	"keywords": [
+  "name": "email-autocomplete",
+  "title": "jQuery Email Autocomplete",
+  "description": "A jQuery plugin that suggests and autocompletes the domain in email fields.",
+  "keywords": [
     "autocomplete",
     "suggestion",
     "domain",
     "email",
     "field"
   ],
-	"version": "0.0.1",
-	"author": {
-		"name": "Low Yong Zhen",
-		"email": "cephyz@gmail.com",
-		"url": "https://github.com/yzlow"
-	},
-	"licenses": [
-		{
-			"type": "MIT",
-			"url": " http://yzlow.mit-license.org"
-		}
-	],
-	"dependencies": {
-		"jquery": ">=1.7"
-	}
+  "version": "0.0.1",
+  "author": {
+    "name": "Low Yong Zhen",
+    "email": "cephyz@gmail.com",
+    "url": "https://github.com/yzlow"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": " http://yzlow.mit-license.org"
+    }
+  ],
+  "dependencies": {
+    "jquery": ">=1.7"
+  }
 }
