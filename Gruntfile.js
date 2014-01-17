@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 
 		// Import package manifest
-		pkg: grunt.file.readJSON("plugin.meta.json"),
+		pkg: grunt.file.readJSON("jquery-autocomplete.jquery.json"),
 
 		project: {
 			src: "src",
