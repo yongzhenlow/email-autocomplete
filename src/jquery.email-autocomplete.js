@@ -51,7 +51,7 @@
 
       //create the suggestion overlay
       /* touchstart jquery 1.7+ */
-      var heightPad = (this.$field.outerHeight() - this.$field.height()) / 2; //padding+border
+      var heightPad = (this.$field.outerHeight(true) - this.$field.height()) / 2; //padding+border
       this.$suggOverlay = $("<span class='"+this.options.suggClass+"' />").css({
         display: "block",
         "box-sizing": "content-box", //standardize
