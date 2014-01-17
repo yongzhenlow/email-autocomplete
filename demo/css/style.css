@@ -1,0 +1,25 @@
+body{
+  padding-top:1%;
+  font-family: 'Source Sans Pro', Arial, san-serif;
+  font-size: large;
+  color:#333;
+  max-width: 600px;
+  margin: 0 auto;  
+}
+
+h1{
+  font-weight:700;  
+}
+
+input{
+  font-family:inherit;
+  color:#333;
+}
+
+.input-wrap{
+  display:inline-block;
+}
+
+.sugg{
+  color:#ccc;
+}

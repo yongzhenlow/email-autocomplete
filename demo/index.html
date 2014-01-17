@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Autosuggest/autocompletes email domains</title>
+  <meta name="description" content="A jQuery plugin that suggests and autocompletes the domain in email fields.">
+  <meta name="author" content="Yong Zhen">
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.css'>
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css" />
+</head>
+<body>
+  <h1>Smarter email fields <small>for a better UX</small></h1>
+
+  <p class="lead">
+    Entering the first few letters of your domain will display a suggestion. (e.g "@g" for "@gmail.com")<br><br>
+    Click, or press tab-key to autocomplete your email domains. <br><em>(or tap on the suggestion for mobile users.)</em>
+  </p>
+
+  <form role="form">
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control email" id="email" placeholder="Enter email">
+      <span class="help-block">Pressing the tab-key autocompletes and jumps to the next field.</span>
+    </div>
+    <div class="form-group">
+      <label for="email2">Secondary Email address</label>
+      <input type="text" class="form-control email" id="email2" placeholder="Enter email">
+    </div>
+  </form>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <script src="/js/jquery.email-autocomplete.js"></script>
+  <script>
+  (function($){
+    $(function() {
+      $(".email").emailautocomplete({
+        domains: ["example.com"] //add your own domains
+      });
+    });
+  }(jQuery));
+  </script>
+</body>
+</html>
