@@ -9,6 +9,10 @@
     "email",
     "field"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yzlow/email-autocomplete.git"
+  },
   "author": "Low Yong Zhen",
   "license": "MIT",
   "devDependencies": {
