@@ -1,5 +1,5 @@
 /*
- *  jQuery Email Autocomplete - v0.0.1
+ *  jQuery Email Autocomplete - v0.0.2
  *  A jQuery plugin that suggests and autocompletes the domain in email fields.
  *  
  *
