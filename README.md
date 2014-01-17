@@ -21,7 +21,7 @@ Installation
 
 To use, download the minified library into your javascripts directory. jquery.email-autocomplete.js is also available unminimized.
 
-Usage with jQuery
+Usage (jQuery)
 -----------------
 
 Include jQuery and Email Autocomplete into your HTML.
@@ -42,9 +42,21 @@ Now, attach the plugin to the text field.
 ```html
 <script>
 $("#email").emailautocomplete({
+  suggClass: "custom-classname", //default: "eac-sugg". your custom classname (optional)
   domains: ["example.com"] //additional domains (optional)
 });
 </script>
+```
+
+Styling
+-----------------
+
+Use the following CSS to style the suggestion text color
+
+```css
+.sugg{
+  color:#ccc;
+}
 ```
 
 Domains

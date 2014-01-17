@@ -4,11 +4,11 @@ body{
   font-size: large;
   color:#333;
   max-width: 600px;
-  margin: 0 auto;  
+  margin: 0 auto;
 }
 
 h1{
-  font-weight:700;  
+  font-weight:700;
 }
 
 input{
@@ -16,10 +16,6 @@ input{
   color:#333;
 }
 
-.input-wrap{
-  display:inline-block;
-}
-
-.sugg{
+.eac-sugg{
   color:#ccc;
 }

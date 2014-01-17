@@ -4,6 +4,7 @@
 
   var pluginName = "emailautocomplete";
   var defaults = {
+    suggClass: "eac-sugg",
     domains: ["yahoo.com" ,"google.com" ,"hotmail.com" ,"gmail.com" ,"me.com" ,"aol.com" ,"mac.com" ,"live.com" ,"comcast.net" ,"googlemail.com" ,"msn.com" ,"hotmail.co.uk" ,"yahoo.co.uk" ,"facebook.com" ,"verizon.net" ,"sbcglobal.net" ,"att.net" ,"gmx.com" ,"mail.com" ,"outlook.com" ,"icloud.com"]
   };
 
@@ -32,7 +33,7 @@
       this.fieldLeftOffset = (this.$field.outerWidth(true) - this.$field.width()) / 2;
 
       //wrap our field
-      var $wrap = $("<div class='input-wrap' />").css({
+      var $wrap = $("<div class='eac-input-wrap' />").css({
         display: this.$field.css("display"),
         position: "relative",
         fontSize: this.$field.css("fontSize")
@@ -40,21 +41,25 @@
       this.$field.wrap($wrap);
 
       //create container to test width of current val
-      this.$cval = $("<span class='cval' />").css({
+      this.$cval = $("<span class='eac-cval' />").css({
         visibility: "hidden",
         position: "absolute",
-        display: "inline-block"
+        display: "inline-block",
+        fontFamily: this.$field.css("fontFamily"),
+        letterSpacing: this.$field.css("letterSpacing")
       }).insertAfter(this.$field);
 
       //create the suggestion overlay
       /* touchstart jquery 1.7+ */
       var heightPad = (this.$field.outerHeight() - this.$field.height()) / 2; //padding+border
-      this.$suggOverlay = $("<span class='sugg' />").css({
+      this.$suggOverlay = $("<span class='"+this.options.suggClass+"' />").css({
         display: "block",
         "box-sizing": "content-box", //standardize
         lineHeight: this.$field.css('lineHeight'),
         paddingTop: heightPad + "px",
         paddingBottom: heightPad + "px",
+        fontFamily: this.$field.css("fontFamily"),
+        letterSpacing: this.$field.css("letterSpacing"),
         position: "absolute",
         top: 0,
         left: 0
