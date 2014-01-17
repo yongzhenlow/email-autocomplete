@@ -54,7 +54,7 @@ Styling
 Use the following CSS to style the suggestion text color
 
 ```css
-.sugg{
+.eac-sugg{
   color:#ccc;
 }
 ```
