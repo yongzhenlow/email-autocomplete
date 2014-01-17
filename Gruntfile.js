@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 
 		// Import package manifest
-		pkg: grunt.file.readJSON("jquery-autocomplete.jquery.json"),
+		pkg: grunt.file.readJSON("email-autocomplete.jquery.json"),
 
 		project: {
 			src: "src",
