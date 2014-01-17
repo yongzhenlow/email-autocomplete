@@ -1,6 +1,9 @@
 jquery.email-autocomplete.js
 =========
-The jQuery plugin that suggests and autocompletes the domain when your users type in an email address field.
+
+[![Build Status](https://travis-ci.org/yzlow/email-autocomplete.png?branch=master)](https://travis-ci.org/yzlow/email-autocomplete)
+
+A jQuery plugin that suggests and autocompletes the domain whenever your users type in an email address field.
 
 What does it do?
 ----------------
@@ -8,6 +11,8 @@ What does it do?
 When your user types in "user@gm", the plugin will suggest for e.g. "user@gmail.com", based on the first result from a list of predefined email domains.
 
 ![diagram](https://raw.github.com/yzlow/email-autocomplete/master/doc_assets/example.png)
+
+Press the tab-key, or simply click on the suggestion to automatically fill in the rest of the domain. (or tap on the suggestion for mobile users.)
 
 Installation
 ------------
