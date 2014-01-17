@@ -46,6 +46,7 @@
         position: "absolute",
         display: "inline-block",
         fontFamily: this.$field.css("fontFamily"),
+        fontWeight: this.$field.css("fontWeight"),
         letterSpacing: this.$field.css("letterSpacing")
       }).insertAfter(this.$field);
 
@@ -59,6 +60,7 @@
         paddingTop: heightPad + "px",
         paddingBottom: heightPad + "px",
         fontFamily: this.$field.css("fontFamily"),
+        fontWeight: this.$field.css("fontWeight"),
         letterSpacing: this.$field.css("letterSpacing"),
         position: "absolute",
         top: 0,
