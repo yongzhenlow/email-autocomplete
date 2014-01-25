@@ -4,6 +4,7 @@
   "description": "A jQuery plugin that suggests and autocompletes the domain in email fields.",
   "keywords": [
     "autocomplete",
+    "typeahead",
     "suggestion",
     "domain",
     "email",
@@ -21,6 +22,7 @@
       "url": " http://yzlow.mit-license.org"
     }
   ],
+  "homepage": "https://github.com/yzlow/email-autocomplete",
   "dependencies": {
     "jquery": ">=1.7"
   }

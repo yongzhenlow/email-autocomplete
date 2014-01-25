@@ -14,6 +14,8 @@ When your user types in "user@gm", the plugin will suggest for e.g. "user@gmail.
 
 Press the tab-key, or simply click on the suggestion to automatically fill in the rest of the domain. (or tap on the suggestion for mobile users.)
 
+You can also use the right arrow key. (new in 0.1.0)
+
 See a live demo [here](http://yzlow.github.io/email-autocomplete/demo/).
 
 Installation
