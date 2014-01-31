@@ -66,27 +66,25 @@ Domains
 
 Email Autocomplete has its own default domains if the `domains` option isn't provided.
 
-* yahoo.com
-* google.com
-* hotmail.com
 * gmail.com
-* me.com
-* aol.com
-* mac.com
-* live.com
-* comcast.net
 * googlemail.com
-* msn.com
-* hotmail.co.uk
+* yahoo.com
 * yahoo.co.uk
-* facebook.com
-* verizon.net
+* hotmail.com
+* hotmail.co.uk
+* live.com
+* msn.com
+* comcast.net
 * sbcglobal.net
+* verizon.net
+* facebook.com
+* outlook.com
 * att.net
 * gmx.com
-* mail.com
-* outlook.com
 * icloud.com
+* me.com
+* mac.com
+* aol.com
 
 Author
 -------

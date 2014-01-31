@@ -13,7 +13,7 @@
   var pluginName = "emailautocomplete";
   var defaults = {
     suggClass: "eac-sugg",
-    domains: ["yahoo.com" ,"google.com" ,"hotmail.com" ,"gmail.com" ,"me.com" ,"aol.com" ,"mac.com" ,"live.com" ,"comcast.net" ,"googlemail.com" ,"msn.com" ,"hotmail.co.uk" ,"yahoo.co.uk" ,"facebook.com" ,"verizon.net" ,"sbcglobal.net" ,"att.net" ,"gmx.com" ,"mail.com" ,"outlook.com" ,"icloud.com"]
+    domains: ["gmail.com", "googlemail.com", "yahoo.com", "yahoo.co.uk", "hotmail.com", "hotmail.co.uk", "live.com", "msn.com", "comcast.net", "sbcglobal.net", "verizon.net", "facebook.com", "outlook.com", "att.net", "gmx.com", "icloud.com", "me.com", "mac.com", "aol.com"]
   };
 
   function Plugin(elem, options) {
