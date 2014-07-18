@@ -10,13 +10,13 @@ What does it do?
 
 When your user types in "user@gm", the plugin will suggest for e.g. "user@gmail.com", based on the first result from a list of predefined email domains.
 
-![diagram](https://raw.github.com/yzlow/email-autocomplete/master/doc_assets/example.png)
+![diagram](https://raw.github.com/10w042/email-autocomplete/master/doc_assets/example.png)
 
 Press the tab-key, or simply click on the suggestion to automatically fill in the rest of the domain. (or tap on the suggestion for mobile users.)
 
 You can also use the right arrow key. (new in 0.1.0)
 
-See a live demo [here](http://yzlow.github.io/email-autocomplete/demo/).
+See a live demo [here](http://10w042.github.io/email-autocomplete/demo/).
 
 Installation
 ------------
