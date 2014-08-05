@@ -92,8 +92,8 @@
         return false;
       }
       this.$field.val(this.val + this.suggestion);
-      this.$suggOverlay.html("");
-      this.$cval.html("");
+      this.$suggOverlay.text("");
+      this.$cval.text("");
     },
 
     /**
@@ -104,14 +104,14 @@
       this.suggestion = this.suggest(this.val);
 
       if (!this.suggestion.length) {
-        this.$suggOverlay.html("");
+        this.$suggOverlay.text("");
       } else {
         e.preventDefault();
       }
 
       //update with new suggestion
-      this.$suggOverlay.html(this.suggestion);
-      this.$cval.html(this.val);
+      this.$suggOverlay.text(this.suggestion);
+      this.$cval.text(this.val);
 
       //find width of current input val so we can offset the suggestion text
       var cvalWidth = this.$cval.width();
