@@ -1,7 +1,7 @@
 jquery.email-autocomplete.js
 =========
 
-[![Build Status](https://travis-ci.org/10w042/email-autocomplete.svg?branch=master)](https://travis-ci.org/10w042/email-autocomplete)
+[![Build Status](https://travis-ci.org/10w042/email-autocomplete.svg?branch=0.1.0)](https://travis-ci.org/10w042/email-autocomplete)
 
 A jQuery plugin that suggests and autocompletes the domain whenever your users type in an email address field.
 
@@ -10,11 +10,13 @@ What does it do?
 
 When your user types in "user@gm", the plugin will suggest for e.g. "user@gmail.com", based on the first result from a list of predefined email domains.
 
-![diagram](https://raw.github.com/yzlow/email-autocomplete/master/doc_assets/example.png)
+![diagram](https://raw.github.com/10w042/email-autocomplete/master/doc_assets/example.png)
 
 Press the tab-key, or simply click on the suggestion to automatically fill in the rest of the domain. (or tap on the suggestion for mobile users.)
 
-See a live demo [here](http://yzlow.github.io/email-autocomplete/demo/).
+You can also use the right arrow key. (new in 0.1.0)
+
+See a live demo [here](http://10w042.github.io/email-autocomplete/demo/).
 
 Installation
 ------------
@@ -64,27 +66,25 @@ Domains
 
 Email Autocomplete has its own default domains if the `domains` option isn't provided.
 
-* yahoo.com
-* google.com
-* hotmail.com
 * gmail.com
-* me.com
-* aol.com
-* mac.com
-* live.com
-* comcast.net
 * googlemail.com
-* msn.com
-* hotmail.co.uk
+* yahoo.com
 * yahoo.co.uk
-* facebook.com
-* verizon.net
+* hotmail.com
+* hotmail.co.uk
+* live.com
+* msn.com
+* comcast.net
 * sbcglobal.net
+* verizon.net
+* facebook.com
+* outlook.com
 * att.net
 * gmx.com
-* mail.com
-* outlook.com
 * icloud.com
+* me.com
+* mac.com
+* aol.com
 
 Author
 -------

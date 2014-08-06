@@ -5,7 +5,7 @@
   var pluginName = "emailautocomplete";
   var defaults = {
     suggClass: "eac-sugg",
-    domains: ["yahoo.com" ,"google.com" ,"hotmail.com" ,"gmail.com" ,"me.com" ,"aol.com" ,"mac.com" ,"live.com" ,"comcast.net" ,"googlemail.com" ,"msn.com" ,"hotmail.co.uk" ,"yahoo.co.uk" ,"facebook.com" ,"verizon.net" ,"sbcglobal.net" ,"att.net" ,"gmx.com" ,"mail.com" ,"outlook.com" ,"icloud.com"]
+    domains: ["yahoo.com" ,"hotmail.com" ,"gmail.com" ,"me.com" ,"aol.com" ,"mac.com" ,"live.com" ,"comcast.net" ,"googlemail.com" ,"msn.com" ,"hotmail.co.uk" ,"yahoo.co.uk" ,"facebook.com" ,"verizon.net" ,"sbcglobal.net" ,"att.net" ,"gmx.com" ,"outlook.com" ,"icloud.com"]
   };
 
   function Plugin(elem, options) {
@@ -23,11 +23,6 @@
       if (!Array.prototype.indexOf) {
         this.doIndexOf();
       }
-
-      //bind handlers
-      this.$field.on("keyup.eac", $.proxy(this.displaySuggestion, this));
-
-      this.$field.on("blur.eac", $.proxy(this.autocomplete, this));
 
       //get input padding,border and margin to offset text
       this.fieldLeftOffset = (this.$field.outerWidth(true) - this.$field.width()) / 2;
@@ -65,8 +60,20 @@
         position: "absolute",
         top: 0,
         left: 0
-      }).insertAfter(this.$field).on("mousedown.eac touchstart.eac", $.proxy(this.autocomplete, this));
+      }).insertAfter(this.$field);
 
+      //bind events and handlers
+      this.$field.on("keyup.eac", $.proxy(this.displaySuggestion, this));
+
+      this.$field.on("blur.eac", $.proxy(this.autocomplete, this));
+
+      this.$field.on("keydown.eac", $.proxy(function(e){
+        if(e.which === 39){
+          this.autocomplete();
+        }
+      }, this));
+
+      this.$suggOverlay.on("mousedown.eac touchstart.eac", $.proxy(this.autocomplete, this));
     },
 
     suggest: function (str) {
@@ -88,7 +95,7 @@
     },
 
     autocomplete: function () {
-      if(typeof this.suggestion === "undefined"){
+      if(typeof this.suggestion === "undefined" || this.suggestion.length < 1){
         return false;
       }
       this.$field.val(this.val + this.suggestion);
