@@ -10,19 +10,19 @@
     "email",
     "field"
   ],
-  "version": "0.0.2",
+  "version": "0.1.0",
   "author": {
     "name": "Low Yong Zhen",
     "email": "cephyz@gmail.com",
-    "url": "https://github.com/yzlow"
+    "url": "https://github.com/10w042"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": " http://yzlow.mit-license.org"
+      "url": "http://yzlow.mit-license.org"
     }
   ],
-  "homepage": "https://github.com/yzlow/email-autocomplete",
+  "homepage": "https://github.com/10w042/email-autocomplete",
   "dependencies": {
     "jquery": ">=1.7"
   }
