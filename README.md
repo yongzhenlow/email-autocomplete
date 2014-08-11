@@ -1,7 +1,7 @@
-jquery.email-autocomplete.js
+jquery.email-autocomplete.js v0.1.0
 =========
 
-[![Build Status](https://travis-ci.org/10w042/email-autocomplete.svg?branch=0.1.0)](https://travis-ci.org/10w042/email-autocomplete)
+[![Build Status](https://travis-ci.org/10w042/email-autocomplete.svg?branch=master)](https://travis-ci.org/10w042/email-autocomplete)
 
 A jQuery plugin that suggests and autocompletes the domain whenever your users type in an email address field.
 
@@ -14,7 +14,7 @@ When your user types in "user@gm", the plugin will suggest for e.g. "user@gmail.
 
 Press the tab-key, or simply click on the suggestion to automatically fill in the rest of the domain. (or tap on the suggestion for mobile users.)
 
-You can also use the right arrow key. (new in 0.1.0)
+You can also use the right arrow key.
 
 See a live demo [here](http://10w042.github.io/email-autocomplete/demo/).
 
