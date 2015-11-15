@@ -31,6 +31,9 @@
     "load-grunt-tasks": "~0.1.0",
     "grunt-contrib-copy": "~0.5.0"
   },
+  "dependencies": {
+    "jquery": "*"
+  },
   "scripts": {
     "test": "grunt travis --verbose"
   }
