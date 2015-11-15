@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "description": "A jQuery plugin that suggests and autocompletes the domain in email fields.",
   "keywords": [
+    "jquery-plugin",
+    "ecosystem:jquery",
     "autocomplete",
     "suggestion",
     "typeahead",
@@ -12,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/yzlow/email-autocomplete.git"
+    "url": "https://github.com/10w042/email-autocomplete.git"
   },
   "author": "Low Yong Zhen",
   "license": "MIT",
