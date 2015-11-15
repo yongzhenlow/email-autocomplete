@@ -1,7 +1,7 @@
 {
   "name": "email-autocomplete",
   "version": "0.1.0",
-  "description": "A jQuery plugin that suggests and autocompletes the domain in email fields.",
+  "description": "jQuery plugin that displays in-place autocomplete suggestions for email input fields.",
   "keywords": [
     "jquery-plugin",
     "ecosystem:jquery",
@@ -10,11 +10,14 @@
     "typeahead",
     "domain",
     "email",
-    "field"
+    "form"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/10w042/email-autocomplete.git"
+  },
+  "bugs": {
+    "url": "https://github.com/10w042/email-autocomplete/issues"
   },
   "author": "Low Yong Zhen",
   "license": "MIT",
