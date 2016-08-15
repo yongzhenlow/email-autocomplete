@@ -1,5 +1,7 @@
 # Created by https://www.gitignore.io/api/windows,osx,linux,node,phpstorm
 
+bower_components
+
 ### Windows ###
 # Windows image file caches
 Thumbs.db

@@ -1,0 +1,29 @@
+{
+  "name": "email-autocomplete",
+  "description": "jQuery plugin that displays in-place autocomplete suggestions for email input fields.",
+  "main": "dist/jquery.email-autocomplete.js",
+  "authors": [
+    "Low Yong Zhen <yz@stargate.io>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "jquery-plugin",
+    "autocomplete",
+    "suggestion",
+    "typeahead",
+    "domain",
+    "email",
+    "input"
+  ],
+  "homepage": "https://github.com/10w042/email-autocomplete",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "*"
+  }
+}
