@@ -4,150 +4,121 @@
  */
 "use strict";
 
-/**
- * Livereload and connect variables
- */
-var LIVERELOAD_PORT = 35729;
-var lrSnippet = require("connect-livereload")({
-  port: LIVERELOAD_PORT
-});
-var mountFolder = function (connect, dir) {
-  return connect.static(require("path").resolve(dir));
-};
+module.exports = function (grunt) {
 
-module.exports = function(grunt) {
+  // Load all grunt tasks matching the ['grunt-*', '@*/grunt-*'] patterns
+  require('load-grunt-tasks')(grunt);
 
+  grunt.initConfig({
 
-	// dynamically load npm tasks
-	require("load-grunt-tasks")(grunt, ["grunt-*"]);
+    // Import package manifest
+    pkg: grunt.file.readJSON("package.json"),
 
-	grunt.initConfig({
-
-		// Import package manifest
-		pkg: grunt.file.readJSON("email-autocomplete.jquery.json"),
-
-		project: {
-			src: "src",
-			dist: "dist",
-			demo: "demo"
-		},
-
-		// Banner definitions
-		meta: {
-			banner: "/*\n" +
-				" *  <%= pkg.title || pkg.name %> - v<%= pkg.version %>\n" +
-				" *  <%= pkg.description %>\n" +
-				" *  <%= pkg.homepage %>\n" +
-				" *\n" +
-				" *  Made by <%= pkg.author.name %> " + "<<%= pkg.author.email %>>\n" +
-				" *  Under <%= pkg.licenses[0].type %> License " + "<<%= pkg.licenses[0].url %>>\n" +
-				" */\n"
-		},
-
-		connect: {
-      options: {
-        port: 9000,
-        hostname: "*"
-      },
-      livereload: {
-        options: {
-          middleware: function (connect) {
-            return [lrSnippet, mountFolder(connect, "demo")];
-          }
-        }
-      }
+    project: {
+      src: "src",
+      dist: "dist",
+      demo: "demo"
     },
 
-    //open server in browser
-    open: {
-      server: {
-        path: "http://localhost:<%= connect.options.port %>"
+    // Banner definitions
+    meta: {
+      banner: "/*\n" +
+      " *  <%= pkg.name %> - <%= pkg.version %>\n" +
+      " *  <%= pkg.description %>\n" +
+      " *  <%= pkg.homepage %>\n" +
+      " *\n" +
+      " *  Made by <%= pkg.author %> \n" +
+      " */\n"
+    },
+
+    browserSync: {
+      bsFiles: {
+        src: [
+          "<%= project.demo %>/**/*.html",
+          "<%= project.demo %>/css/**/*.css",
+          "<%= project.demo %>/js/**/*.js"
+        ]
+      },
+      options: {
+        watchTask: true,
+        server: {
+          baseDir: "./demo"
+        }
       }
     },
 
     //watch for changes
     watch: {
-      concat: {
-        files: "<%= project.src %>/{,*/}*.js",
+      scripts: {
+        files: "<%= project.src %>/**/*.js",
         tasks: ["common"]
-      },
-      livereload: {
-        options: {
-          livereload: LIVERELOAD_PORT
-        },
-        files: [
-          "<%= project.demo %>/**/*.{html,aspx}",
-          "<%= project.demo %>/css/*.css",
-          "<%= project.demo %>/js/{,*/}*.js"
-        ]
       }
     },
 
-		// Concat definitions
-		concat: {
-			dist: {
-				src: ["<%= project.src %>/jquery.email-autocomplete.js"],
-				dest: "<%= project.dist %>/jquery.email-autocomplete.js"
-			},
-			options: {
-				banner: "<%= meta.banner %>"
-			}
-		},
+    // Concat definitions
+    concat: {
+      options: {
+        banner: "<%= meta.banner %>"
+      },
+      dist: {
+        src: ["<%= project.src %>/jquery.email-autocomplete.js"],
+        dest: "<%= project.dist %>/jquery.email-autocomplete.js"
+      }
+    },
 
-		copy: {
-			demo: {
-				files: [{
+    copy: {
+      demo: {
+        files: [{
           expand: true,
           cwd: '<%= project.dist %>',
           dest: '<%= project.demo %>/js/',
           src: ['jquery.email-autocomplete.js']
         }]
-			}
-		},
+      }
+    },
 
-		// Lint definitions
-		jshint: {
-			files: [
-				"<%= project.src %>/jquery.email-autocomplete.js",
-				"Gruntfile.js"
-			],
-			options: {
-				jshintrc: ".jshintrc"
-			}
-		},
+    // Lint definitions
+    jshint: {
+      files: [
+        "<%= project.src %>/jquery.email-autocomplete.js",
+        "Gruntfile.js"
+      ],
+      options: {
+        jshintrc: ".jshintrc"
+      }
+    },
 
-		// Minify definitions
-		uglify: {
-			dist: {
-				src: ["<%= project.dist %>/jquery.email-autocomplete.js"],
-				dest: "<%= project.dist %>/jquery.email-autocomplete.min.js"
-			},
-			options: {
-				banner: "<%= meta.banner %>",
-				mangle: true
-			}
-		}
+    // Minify definitions
+    uglify: {
+      dist: {
+        src: ["<%= project.src %>/jquery.email-autocomplete.js"],
+        dest: "<%= project.dist %>/jquery.email-autocomplete.min.js"
+      },
+      options: {
+        banner: "<%= meta.banner %>",
+        mangle: true
+      }
+    }
 
-	});
+  });
 
-	grunt.registerTask("travis", ["jshint"]);
+  grunt.registerTask("travis", ["jshint"]);
 
-	grunt.registerTask("common", [
-		"jshint",
-		"concat",
-		"copy"
-	]);
+  grunt.registerTask("common", [
+    "jshint",
+    "concat",
+    "copy"
+  ]);
 
-	grunt.registerTask("server", [
-		"common",
-		"connect:livereload",
-    "open",
+  grunt.registerTask("server", [
+    "common",
+    "browserSync",
     "watch"
-	]);
+  ]);
 
-	grunt.registerTask("default", [
-		"common",
-		"uglify"
-	]);
+  grunt.registerTask("default", [
+    "common",
+    "uglify"
+  ]);
 
 };
