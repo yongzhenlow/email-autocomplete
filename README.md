@@ -1,4 +1,4 @@
-jquery.email-autocomplete.js v0.1.0
+jquery.email-autocomplete.js v0.1.1
 =========
 
 [![Build Status](https://travis-ci.org/10w042/email-autocomplete.svg?branch=master)](https://travis-ci.org/10w042/email-autocomplete)
@@ -20,26 +20,29 @@ See a live demo [here](http://10w042.github.io/email-autocomplete/demo/).
 
 Installation
 ------------
+#####Bower
+`bower install email-autocomplete --save`
 
-To use, download the minified library into your javascripts directory. jquery.email-autocomplete.js is also available unminimized.
+#####Manual
+Download or clone this repo and copy `dist/jquery.email-autocomplete.min.js` into your javascripts directory.
 
 Usage (jQuery)
 -----------------
 
-Include jQuery and Email Autocomplete into your HTML.
+Just add `jquery.email-autocomplete.min.js` into your HTML, before your closing </body>.
 
 ```html
 <script src="jquery.min.js"></script>
 <script src="jquery.email-autocomplete.min.js"></script>
 ```
 
-You should have a text field.
+You should also have a email input field.
 
 ```html
 <input id="email" name="email" type="email" />
 ```
 
-Now, attach the plugin to the text field.
+Now, attach the plugin to the email input field.
 
 ```html
 <script>
@@ -53,11 +56,11 @@ $("#email").emailautocomplete({
 Styling
 -----------------
 
-Use the following CSS to style the suggestion text color
+Use the following CSS to style the suggestion text color. Remember to update the classname if you've changed it to a custom one.
 
 ```css
-.eac-sugg{
-  color:#ccc;
+.eac-sugg {
+  color: #ccc;
 }
 ```
 
@@ -94,7 +97,7 @@ Author
 License
 -------
 
-Copyright (c) 2014
+Copyright (c) 2016
 
 Licensed under the MIT License.
 

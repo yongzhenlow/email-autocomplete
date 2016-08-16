@@ -1,10 +1,9 @@
 /*
- *  jQuery Email Autocomplete - v0.0.2
- *  A jQuery plugin that suggests and autocompletes the domain in email fields.
- *  https://github.com/yzlow/email-autocomplete
+ *  email-autocomplete - 0.1.1
+ *  jQuery plugin that displays in-place autocomplete suggestions for email input fields.
+ *  
  *
- *  Made by Low Yong Zhen <cephyz@gmail.com>
- *  Under MIT License < http://yzlow.mit-license.org>
+ *  Made by Low Yong Zhen <yz@stargate.io> 
  */
 "use strict";
 
@@ -16,7 +15,7 @@
     domains: ["yahoo.com" ,"hotmail.com" ,"gmail.com" ,"me.com" ,"aol.com" ,"mac.com" ,"live.com" ,"comcast.net" ,"googlemail.com" ,"msn.com" ,"hotmail.co.uk" ,"yahoo.co.uk" ,"facebook.com" ,"verizon.net" ,"sbcglobal.net" ,"att.net" ,"gmx.com" ,"outlook.com" ,"icloud.com"]
   };
 
-  function Plugin(elem, options) {
+  function EmailAutocomplete(elem, options) {
     this.$field = $(elem);
     this.options = $.extend(true, {}, defaults, options); //we want deep extend
     this._defaults = defaults;
@@ -24,7 +23,7 @@
     this.init();
   }
 
-  Plugin.prototype = {
+  EmailAutocomplete.prototype = {
     init: function () {
 
       //shim indexOf
@@ -32,13 +31,13 @@
         this.doIndexOf();
       }
 
-      //get input padding,border and margin to offset text
-      this.fieldLeftOffset = (this.$field.outerWidth(true) - this.$field.width()) / 2;
+      //this will be calculated upon keyup
+      this.fieldLeftOffset = null;
 
       //wrap our field
       var $wrap = $("<div class='eac-input-wrap' />").css({
         display: this.$field.css("display"),
-        position: "relative",
+        position: this.$field.css("position") === 'static' ? 'relative' : this.$field.css("position"),
         fontSize: this.$field.css("fontSize")
       });
       this.$field.wrap($wrap);
@@ -126,6 +125,11 @@
       this.$suggOverlay.text(this.suggestion);
       this.$cval.text(this.val);
 
+      // get input padding, border and margin to offset text
+      if(this.fieldLeftOffset === null){
+        this.fieldLeftOffset = (this.$field.outerWidth(true) - this.$field.width()) / 2;
+      }
+
       //find width of current input val so we can offset the suggestion text
       var cvalWidth = this.$cval.width();
 
@@ -175,7 +179,7 @@
   $.fn[pluginName] = function (options) {
     return this.each(function () {
       if (!$.data(this, "yz_" + pluginName)) {
-        $.data(this, "yz_" + pluginName, new Plugin(this, options));
+        $.data(this, "yz_" + pluginName, new EmailAutocomplete(this, options));
       }
     });
   };
