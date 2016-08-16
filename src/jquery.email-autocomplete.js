@@ -24,13 +24,13 @@
         this.doIndexOf();
       }
 
-      //get input padding,border and margin to offset text
-      this.fieldLeftOffset = (this.$field.outerWidth(true) - this.$field.width()) / 2;
+      //this will be calculated upon keyup
+      this.fieldLeftOffset = null;
 
       //wrap our field
       var $wrap = $("<div class='eac-input-wrap' />").css({
         display: this.$field.css("display"),
-        position: "relative",
+        position: this.$field.css("position") === 'static' ? 'relative' : this.$field.css("position"),
         fontSize: this.$field.css("fontSize")
       });
       this.$field.wrap($wrap);
@@ -117,6 +117,11 @@
       //update with new suggestion
       this.$suggOverlay.text(this.suggestion);
       this.$cval.text(this.val);
+
+      // get input padding, border and margin to offset text
+      if(this.fieldLeftOffset === null){
+        this.fieldLeftOffset = (this.$field.outerWidth(true) - this.$field.width()) / 2;
+      }
 
       //find width of current input val so we can offset the suggestion text
       var cvalWidth = this.$cval.width();
