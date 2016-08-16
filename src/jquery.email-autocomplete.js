@@ -8,7 +8,7 @@
     domains: ["yahoo.com" ,"hotmail.com" ,"gmail.com" ,"me.com" ,"aol.com" ,"mac.com" ,"live.com" ,"comcast.net" ,"googlemail.com" ,"msn.com" ,"hotmail.co.uk" ,"yahoo.co.uk" ,"facebook.com" ,"verizon.net" ,"sbcglobal.net" ,"att.net" ,"gmx.com" ,"outlook.com" ,"icloud.com"]
   };
 
-  function Plugin(elem, options) {
+  function EmailAutocomplete(elem, options) {
     this.$field = $(elem);
     this.options = $.extend(true, {}, defaults, options); //we want deep extend
     this._defaults = defaults;
@@ -16,7 +16,7 @@
     this.init();
   }
 
-  Plugin.prototype = {
+  EmailAutocomplete.prototype = {
     init: function () {
 
       //shim indexOf
@@ -172,7 +172,7 @@
   $.fn[pluginName] = function (options) {
     return this.each(function () {
       if (!$.data(this, "yz_" + pluginName)) {
-        $.data(this, "yz_" + pluginName, new Plugin(this, options));
+        $.data(this, "yz_" + pluginName, new EmailAutocomplete(this, options));
       }
     });
   };
