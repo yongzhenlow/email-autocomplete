@@ -92,11 +92,13 @@
         return "";
       }
 
+      var pattern = new RegExp("^" + str, "i");
+
       var match = this._domains.filter(function (domain) {
-        return 0 === domain.indexOf(str);
+        return domain.match(pattern) !== null;
       }).shift() || "";
 
-      return match.replace(str, "");
+      return match.replace(pattern, "");
     },
 
     autocomplete: function () {
