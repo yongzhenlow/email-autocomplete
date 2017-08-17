@@ -1,5 +1,5 @@
 /*
- *  email-autocomplete - 0.1.1
+ *  email-autocomplete - 0.1.2
  *  jQuery plugin that displays in-place autocomplete suggestions for email input fields.
  *  
  *

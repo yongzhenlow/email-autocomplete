@@ -1,4 +1,4 @@
-jquery.email-autocomplete.js v0.1.1
+jquery.email-autocomplete.js v0.1.2
 =========
 
 [![Build Status](https://travis-ci.org/10w042/email-autocomplete.svg?branch=master)](https://travis-ci.org/10w042/email-autocomplete)
