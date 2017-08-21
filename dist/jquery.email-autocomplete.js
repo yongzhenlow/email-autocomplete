@@ -72,6 +72,8 @@
       //bind events and handlers
       this.$field.on("keyup.eac", $.proxy(this.displaySuggestion, this));
 
+      this.$field.on("blur.eac", $.proxy(this.autocomplete, this));
+
       this.$field.on("keydown.eac", $.proxy(function(e){
         if(e.which === 39 || e.which === 9){
           this.autocomplete();
