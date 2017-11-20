@@ -1,5 +1,5 @@
 /*
- *  email-autocomplete - 0.1.2
+ *  email-autocomplete - 0.1.3
  *  jQuery plugin that displays in-place autocomplete suggestions for email input fields.
  *  
  *
@@ -94,13 +94,11 @@
         return "";
       }
 
-      var pattern = new RegExp("^" + str, "i");
-
       var match = this._domains.filter(function (domain) {
-        return domain.match(pattern) !== null;
+        return domain.indexOf(str) === 0;
       }).shift() || "";
 
-      return match.replace(pattern, "");
+      return match.replace(str, "");
     },
 
     autocomplete: function () {
