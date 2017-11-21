@@ -1,4 +1,4 @@
-# jquery.email-autocomplete.js v0.1.2
+# jquery.email-autocomplete.js
 
 > A jQuery plugin that suggests and autocompletes the domain whenever your users type in an email address field.
 
