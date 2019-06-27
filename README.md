@@ -2,7 +2,7 @@
 
 > A jQuery plugin that suggests and autocompletes the domain whenever your users type in an email address field.
 
-[![Build Status](https://travis-ci.org/10w042/email-autocomplete.svg?branch=master)](https://travis-ci.org/10w042/email-autocomplete)
+[![Build Status](https://travis-ci.org/yongzhenlow/email-autocomplete.svg?branch=master)](https://travis-ci.org/yongzhenlow/email-autocomplete)
 [![CDNJS version](https://img.shields.io/cdnjs/v/email-autocomplete.svg)](https://cdnjs.com/libraries/email-autocomplete)
 
 
