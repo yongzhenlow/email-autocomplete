@@ -14,12 +14,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/10w042/email-autocomplete.git"
+    "url": "https://github.com/yongzhenlow/email-autocomplete.git"
   },
   "bugs": {
-    "url": "https://github.com/10w042/email-autocomplete/issues"
+    "url": "https://github.com/yongzhenlow/email-autocomplete/issues"
   },
-  "author": "Low Yong Zhen <yz@stargate.io>",
+  "author": "Low Yong Zhen",
   "license": "MIT",
   "devDependencies": {
     "grunt": "^1.0.1",
